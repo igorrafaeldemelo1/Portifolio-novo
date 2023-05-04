@@ -1,17 +1,30 @@
 
 import js from './img/js.png'
 import reactjs from './img/reactjs.png'
+import html from './img/html.png'
+import css from './img/css.png'
+import sass from './img/sass.png'
+import Bootstrap from './img/bootstrap.png'
+import git from './img/git.png'
 import './App.css';
-
 
 
 const Top = () => <>
   <section className='Top'>
     <div className='Name-Funcion'>Desenvolvedor Web </div>
     <ul>
-      <li>Sobre</li>
-      <li>Formação</li>
-      <li>Projetos</li>
+      <button className="Btn-Link" onClick={() => {
+        const open = document.getElementById('Sobre')
+        open.style.display = "block"
+      }}>Sobre</button>
+      <button className="Btn-Link" onClick={() => {
+        const open = document.getElementById('Formaçao')
+        open.style.display = "block"
+      }}>Formação</button>
+      <button className="Btn-Link" onClick={() => {
+        const open = document.getElementById('Projetos')
+        open.style.display = "block"
+      }}>Projetos</button>
     </ul>
   </section>
 
@@ -27,6 +40,14 @@ const Midpage = () => <>
         <img src={js} />
         <img src={reactjs} />
       </div>
+      <div className="Img-Sub">
+        <img className="Img-Sec" src={html} ></img>
+        <img className="Img-Sec" src={css} ></img>
+        <img className="Img-Sec" src={sass} ></img>
+        <br/>
+        <img className="Img-Sec" src={Bootstrap} ></img>
+        <img className="Img-Sec" src={git} ></img>
+      </div>
     </div>
     <Menu />
   </section>
@@ -37,7 +58,7 @@ const Menu = () => <>
   <section className='Menu'>
     <div className='Title'>Meus Projetos</div>
     <div className='Informs'>Olá, aqui haverá alguns projetos que eu desenvolvi durante meus estudos na área de desenvolvimento de sistemas. </div>
-    <button>Projetos</button>
+    <button className="Btn-Pjt">Projetos</button>
   </section>
 
 </>
@@ -63,12 +84,70 @@ const Sociais = () => <>
 
 </>
 
+const Sobre = () => <>
+  <section className='Sobre' id="Sobre">
+    <div className='Text-Titulo'>Sobre</div>
+    <div className="Line-Sobre"></div>
+    <div className="Descrisao"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>'</span>Olá, me chamo Igor Rafael de Melo, tenho 25 anos e sou estudante de análise e desenvolvimento de sistemas, tenho formação técnica, alguns cursos e cursando superior de nível tecnólogo em análise de sistemas Web, Tenho conhecimento de algumas ferramentas Front-End da área como  Html5, Css3, Sass, Bootstrap, Tailwild, JavaScript, ReactJs e Git.
+      <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Meu principal Objetivo hoje é starta na Análise  desenvolvimento Web, adquirir conhecimento de outras ferramentas e Network de profissionais e também me aprofunda no Back-End.</div>
+    <button className="Close" onClick={() => {
+      const open = document.getElementById('Sobre')
+      open.style.display = "None"
+    }}>X</button>
+  </section>
+
+</>
+
+const Formaçao = () => <>
+  <section id="Formaçao" className='Formaçao'>
+    <button className="Close" onClick={() => {
+      const open = document.getElementById('Formaçao')
+      open.style.display = "none"
+    }}>X</button>
+    <p>Formação</p>
+    <div className="Curso">
+      <div className="Flex">
+        <div className="Nome-Escola">QI - Faculdade e Escola Técnica</div>
+        <div className='Nome-Curso'> Técnico - Análise e Desenvolvimento de sistemas Web | Aplication</div>
+        <div className='Ano'>2020 | 2022</div>
+      </div>
+      <div className="Barra"></div>
+      <div className='Dados-Curso'>Lógica de programação, Linguagem de programação Java, JavaScript , PhP, Flutter/Dart, Manipulação e criação de Banco de dados com My/SQL, Desing Thinking, UX/IX, IOT, Linguagem de arquitetura e estilização Html5 e Css3, Internet das coisas. </div>
+    </div>
+    <div className="Curso">
+      <div className="Flex">
+        <div className="Nome-Escola">Anhanguera</div>
+        <div className='Nome-Curso'> Tecnólogo - Análise e Desenvolvimento de sistemas Web </div>
+        <div className='Ano'>2023 | Cursando</div>
+      </div>
+      <div className="Barra"></div>
+      <div className='Dados-Curso'>1st - Arquitetura e Organização de Computadores, Projeto de Software, Interfaçe e Usabilidade, Segurando e Auditoria de sistemas. </div>
+    </div>
+  </section>
+
+</>
+
+const Projetos = () => <>
+  <section className='Projetos' id="Projetos">
+    <div className='Pefil' ></div>
+    <div className='Dados'></div>
+    <button className="Close" onClick={() => {
+      const open = document.getElementById('Projetos')
+      open.style.display = "None"
+    }}>X</button>
+  </section>
+
+</>
+
 function App() {
   return (
     <div className="App">
       <Top />
       <Midpage />
       <Sociais />
+      <Sobre />
+      <Formaçao />
+      <Projetos />
     </div>
   );
 }
