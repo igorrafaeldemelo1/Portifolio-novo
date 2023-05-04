@@ -237,7 +237,12 @@ p{
 }
 .Btn-Pjt{
   border:solid 1px;
+  background: #0590e6;
 }
+.Btn-Pjt:hover{
+  background: #0376be;
+}
+
 .Projetos{
   position: fixed;
   top: 0px;
